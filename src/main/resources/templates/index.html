@@ -1,16 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Avatar D&D</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e0f7fa;
+        background-image: url('https://source.unsplash.com/1920x1080/?fantasy');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    form {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        width: 300px;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #008CBA;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+    }
+</style>
 </head>
-
 <body>
-  <label>D and D</label>
-  <h1>testMani</h1>
-  <button class="boton">Genedor de avatar</button>
-</body>
 
+<form id="avatarForm">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="number" name="edad" placeholder="Edad" required min="1" max="1000">
+    <select name="genero" required>
+        <option value="" disabled selected>Género</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+    </select>
+    <select name="clase" required>
+        <option value="" disabled selected>Clase</option>
+        <!-- Añade las clases de D&D -->
+        <option value="Guerrero">Guerrero</option>
+        <option value="Mago">Mago</option>
+        <!-- ... -->
+    </select>
+    <textarea name="descripcion" placeholder="Descripción" required></textarea>
+    <button type="submit">Crear Avatar</button>
+</form>
+
+<script>
+    document.getElementById('avatarForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var formData = new FormData(this);
+        
+        // Log para verificar los datos
+        for(var pair of formData.entries()) {
+           console.log(pair[0]+ ': '+ pair[1]);
+        }
+    });
+</script>
+
+</body>
 </html>
