@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Collection</title>
+    <link rel="stylesheet" href="avatares.css">
+    <style>
+        body {
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.avatar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.avatar-card {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.avatar-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.avatar-card p {
+    margin-bottom: 0;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Avatar Collection</h1>
+
+    <div class="avatar-grid">
+        <div class="avatar-card">
+            <img src="https://source.unsplash.com/1920x1080/?dungeons" alt="Avatar 1">
+            <h3>Aella</h3>
+            <p class="class">Rogue</p>
+            <p class="created-date">Created on: 2023-11-21</p>
+            <a href="/details" class="learn-more-btn">Detalles</a>
+        </div>
+
+        <div class="avatar-card">
+            <img src="https://source.unsplash.com/1920x1080/?dungeons" alt="Avatar 1">
+            <h3>Kael</h3>
+            <p class="class">Wizard</p>
+            <p class="created-date">Created on: 2023-11-20</p>
+            <a href="/details" class="learn-more-btn">Detalles</a>
+        </div>
+
+        <div class="avatar-card">
+            <img src="https://source.unsplash.com/1920x1080/?dungeons" alt="Avatar 1">
+            <h3>Eris</h3>
+            <p class="class">Fighter</p>
+            <p class="created-date">Created on: 2023-11-19</p>
+            <a href="/details" class="learn-more-btn">Detalles</a>
+        </div>
+
+        <div class="avatar-card">
+            <img src="https://source.unsplash.com/1920x1080/?dungeons" alt="Avatar 1">
+            <h3>Morrigan</h3>
+            <p class="class">Cleric</p>
+            <p class="created-date">Created on: 2023-11-18</p>
+            <a href="/details" class="learn-more-btn">Detalles</a>
+        </div>
+
+        <div class="avatar-card">
+            <img src="https://source.unsplash.com/1920x1080/?dungeons" alt="Avatar 1">
+            <h3>Ash</h3>
+            <p class="class">Paladin</p>
+            <p class="created-date">Created on: 2023-11-17</p>
+            <a href="/details" class="learn-more-btn">Detalles</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -10,4 +10,14 @@ public class WebPageController {
     public String HolaMundo() {
         return "index";
     }
+
+    @RequestMapping(value="/avatares")
+    public String Avatares() {
+        return "avatares";
+    }
+
+    @RequestMapping(value="/details")
+    public String Details() {
+        return "details";
+    }
 }
