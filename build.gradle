@@ -6,6 +6,12 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
+application {
+    // ... other application settings ...
+
+    // Set the port here
+    defaultJvmArgs = ["-Dserver.port=8081"]
+}
 
 java {
 	sourceCompatibility = '17'
