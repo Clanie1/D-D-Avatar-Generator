@@ -19,6 +19,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController
 public class ImageController {
 
+    private final ImageRepository imageRepository;
+
+    public ImageController(ImageRepository imageRepository) {
+        this.imageRepository = imageRepository;
+    }
+
     @PostMapping(value="/image")
     public ResponseEntity<ImageGenerationResponse> getImage(@RequestBody MyRequestData requestBody) {
         try{
@@ -54,6 +60,18 @@ public class ImageController {
             ObjectMapper objectMapper = new ObjectMapper();
             ImageGenerationResponse imageGenerationResponse = objectMapper.readValue(responseString, ImageGenerationResponse.class);
  
+            // Create a new ImageEntity
+            ImageEntity imageEntity = new ImageEntity();
+            imageEntity.setImageURL(imageGenerationResponse.getData().get(0).getUrl()); // Assuming the URL is in the first data object
+            imageEntity.setName(requestBody.getNombre());
+            imageEntity.setAge(Integer.parseInt(requestBody.getEdad())); // Assuming the age is a string that can be parsed to an integer
+            imageEntity.setGender(requestBody.getGenero());
+            imageEntity.setClassName(requestBody.getClase());
+            imageEntity.setDescription(requestBody.getDescription());
+
+            // Save the ImageEntity to the database
+            imageRepository.save(imageEntity);
+
             return ResponseEntity.ok(imageGenerationResponse);
         }catch(Exception e){
             e.printStackTrace();
